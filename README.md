@@ -27,7 +27,7 @@ Aplikasi kasir (Point of Sale) sederhana untuk kasir kantin / toko kampus, diker
 
 1. Clone atau unduh repository ini, lalu buka foldernya di **VS Code**:
    ```
-   git clone https://github.com/<username>/pemrograman_web_itera_123140132.git
+   git clone https://github.com/MNAUFALFAKMAL/pemrograman_web_itera_123140132.git
    ```
 2. Pasang ekstensi **Live Server** (Ritwick Dey) jika belum ada.
 3. Buka file `index.html`, klik kanan -> **Open with Live Server**.
