@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 04 - DOM &amp; API</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 24px auto; padding: 0 16px; line-height: 1.6; color: #1f2937; background: #fff; }
+    body.gelap { background: #111827; color: #e5e7eb; }
+    body.gelap .kartu { border-color: #374151; }
+    body.gelap input { background: #1f2937; color: #e5e7eb; border-color: #4b5563; }
+    h1 { font-size: 1.4rem; } h2 { font-size: 1.05rem; margin-top: 1.6rem; }
+    .kartu { border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; }
+    input { padding: 6px 8px; border: 1px solid #9ca3af; border-radius: 6px; }
+    button { padding: 6px 12px; border: none; border-radius: 6px; background: #2563eb; color: #fff; cursor: pointer; }
+    .pos { display: inline-block; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 12px; margin: 4px 6px 4px 0; }
+    body.gelap .pos { background: #1f2937; border-color: #374151; }
+    .error { color: #dc2626; font-size: 0.9rem; font-weight: 600; }
+    ul.plain { list-style: none; padding: 0; }
+  </style>
+  <script src="04_dom_api.js" defer></script>
+</head>
+<body>
+  <h1>Latihan Pertemuan 01 - DOM, localStorage &amp; Fetch API</h1>
+
+  <div class="kartu">
+    <h2>Dark Mode Toggle</h2>
+    <button id="btn-dark">Aktifkan Dark Mode</button>
+  </div>
+
+  <div class="kartu">
+    <h2>1 &amp; 2. Form Tambah Catatan + localStorage</h2>
+    <input type="text" id="input-catatan" placeholder="Tulis catatan...">
+    <button id="btn-simpan">Simpan</button>
+    <p class="error" id="error-catatan"></p>
+    <ul class="plain" id="daftar-catatan"></ul>
+    <p><button id="btn-bersihkan">Bersihkan Semua</button></p>
+  </div>
+
+  <div class="kartu">
+    <h2>3 &amp; 4. Fetch API + Search + Pagination</h2>
+    <input type="text" id="input-cari" placeholder="Cari judul post...">
+    <button id="btn-cari">Cari</button>
+    <p id="status-api" style="font-size:0.9rem;"></p>
+    <div id="hasil-api"></div>
+    <p>
+      <button id="btn-prev"><< Previous</button>
+      <span id="info-halaman"></span>
+      <button id="btn-next">Next >></button>
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini POS - Kasir Kantin | Muhammad Naufal Fikri Akmal</title>
+  <meta name="description" content="Aplikasi Kasir & Keranjang Belanja Sederhana (Mini POS) - tugas Praktikum Pemrograman Web Pertemuan 1.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">MP</span>
+        <div class="brand__teks">
+          <h1 class="brand__nama">Mini POS - Kasir Kantin</h1>
+          <p class="brand__sub">Praktikum Pemrograman Web - Pertemuan 1</p>
+        </div>
+      </div>
+      <p class="app-header__meta">
+        <span class="chip" id="jumlah-item">0 item</span>
+        <span class="chip chip--muted">Kelas RA</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <!-- ============ KOLOM KIRI: FORM INPUT BARANG ============ -->
+    <section class="panel panel--form" aria-labelledby="judul-form">
+      <div class="panel__header">
+        <h2 class="panel__judul" id="judul-form">Tambah Barang</h2>
+        <p class="panel__sub">Isi data barang lalu tekan tombol tambah.</p>
+      </div>
+
+      <form id="form-barang" novalidate>
+        <div class="field">
+          <label for="nama-barang">Nama Barang</label>
+          <input type="text" id="nama-barang" name="namaBarang" placeholder="cth. Buku Tulis"
+                 autocomplete="off" aria-describedby="error-nama">
+          <p class="error" id="error-nama" role="alert" hidden></p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="harga-satuan">Harga Satuan (Rp)</label>
+            <input type="number" id="harga-satuan" name="hargaSatuan" placeholder="cth. 3500"
+                   min="500" step="100" inputmode="numeric" aria-describedby="error-harga">
+            <p class="error" id="error-harga" role="alert" hidden></p>
+          </div>
+
+          <div class="field field--qty">
+            <label for="jumlah">Jumlah (Qty)</label>
+            <input type="number" id="jumlah" name="jumlah" placeholder="cth. 2"
+                   min="1" step="1" inputmode="numeric" aria-describedby="error-jumlah">
+            <p class="error" id="error-jumlah" role="alert" hidden></p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--utama btn--blok">Tambah ke Keranjang</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+
+      <div class="aturan">
+        <h3 class="aturan__judul">Aturan input</h3>
+        <ul class="aturan__list">
+          <li>Nama barang wajib diisi, minimal 3 karakter.</li>
+          <li>Harga satuan berupa angka positif, minimal Rp 500.</li>
+          <li>Jumlah berupa angka bulat minimal 1.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ KOLOM KANAN: KERANJANG + RINGKASAN ============ -->
+    <div class="kolom-kanan">
+
+      <section class="panel" aria-labelledby="judul-keranjang">
+        <div class="panel__header">
+          <h2 class="panel__judul" id="judul-keranjang">Keranjang Belanja</h2>
+          <p class="panel__sub">Data tersimpan otomatis di browser (localStorage).</p>
+        </div>
+
+        <div class="tabel-bungkus">
+          <table class="tabel">
+            <thead>
+              <tr>
+                <th scope="col" class="kolom-no">No</th>
+                <th scope="col" class="kolom-nama">Nama Barang</th>
+                <th scope="col" class="kolom-angka">Harga Satuan</th>
+                <th scope="col" class="kolom-angka">Qty</th>
+                <th scope="col" class="kolom-angka">Subtotal</th>
+                <th scope="col" class="kolom-aksi">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="daftar-keranjang"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="judul-ringkasan">
+        <div class="panel__header">
+          <h2 class="panel__judul" id="judul-ringkasan">Ringkasan &amp; Pembayaran</h2>
+        </div>
+
+        <div class="ringkasan-grid">
+          <div class="ringkasan-kiri">
+            <div class="field">
+              <label for="kode-promo">Kode Promo</label>
+              <div class="promo-baris">
+                <input type="text" id="kode-promo" placeholder="cth. HEMAT10"
+                       autocomplete="off" aria-describedby="error-promo info-promo">
+                <button type="button" class="btn btn--sekunder" id="btn-promo">Terapkan</button>
+              </div>
+              <p class="error" id="error-promo" role="alert" hidden></p>
+              <p class="info" id="info-promo"></p>
+            </div>
+
+            <div class="field">
+              <label for="uang-bayar">Uang Bayar (Rp)</label>
+              <input type="number" id="uang-bayar" placeholder="cth. 50000"
+                     min="0" step="500" inputmode="numeric" aria-describedby="status-pembayaran">
+            </div>
+
+            <p class="pembayaran" id="status-pembayaran" role="status">Belum ada pembayaran.</p>
+          </div>
+
+          <div class="ringkasan-kanan">
+            <dl class="nota">
+              <div class="nota__baris">
+                <dt>Total Belanja</dt>
+                <dd id="total-belanja">Rp 0</dd>
+              </div>
+              <div class="nota__baris nota__baris--diskon">
+                <dt>Diskon <span class="nota__ket" id="diskon-keterangan"></span></dt>
+                <dd id="diskon">Rp 0</dd>
+              </div>
+              <div class="nota__baris nota__baris--total">
+                <dt>Total Akhir</dt>
+                <dd id="total-akhir">Rp 0</dd>
+              </div>
+            </dl>
+
+            <div class="aksi-utama">
+              <button type="button" class="btn btn--reset btn--blok" id="btn-transaksi-baru">
+                Transaksi Baru / Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Mini POS Sederhana | Tugas Pertemuan 1 - Muhammad Naufal Fikri Akmal (123140132)</p>
+  </footer>
+
+</body>
+</html>

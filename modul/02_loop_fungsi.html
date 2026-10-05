@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 02 - Loop &amp; Fungsi</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 24px auto; padding: 0 16px; line-height: 1.6; color: #1f2937; }
+    h1 { font-size: 1.4rem; } h2 { font-size: 1.05rem; margin-top: 1.6rem; }
+    .kartu { border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; }
+    table { border-collapse: collapse; font-size: 0.9rem; }
+    td, th { border: 1px solid #d1d5db; padding: 4px 10px; text-align: center; }
+    pre { background: #f3f4f6; padding: 10px 14px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }
+    input { padding: 6px 8px; border: 1px solid #9ca3af; border-radius: 6px; width: 110px; }
+    button { padding: 6px 12px; border: none; border-radius: 6px; background: #2563eb; color: #fff; cursor: pointer; }
+    #hasil-bmi { font-weight: 600; }
+  </style>
+  <script src="02_loop_fungsi.js" defer></script>
+</head>
+<body>
+  <h1>Latihan Pertemuan 01 - Loop &amp; Fungsi</h1>
+  <div id="result"></div>
+
+  <div class="kartu">
+    <h2>5. Kalkulator BMI (fungsi + event handler)</h2>
+    <label>Berat (kg): <input type="number" id="berat" placeholder="60"></label>
+    <label>Tinggi (cm): <input type="number" id="tinggi" placeholder="170"></label>
+    <button id="btn-bmi">Hitung BMI</button>
+    <p id="hasil-bmi"></p>
+  </div>
+</body>
+</html>
