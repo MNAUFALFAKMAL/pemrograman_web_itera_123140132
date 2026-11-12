@@ -2,7 +2,7 @@
 
 **Nama:** Muhammad Naufal Fikri Akmal  
 **NIM:** 123140132  
-**Kelas:** (isi kelas)  
+**Kelas:** RA  
 **Mata Kuliah:** Praktikum Pengembangan Aplikasi Web - ITERA
 
 ---
@@ -52,7 +52,9 @@ muhammadnaufalfikriakmal_123140132_pertemuan4/
 ├── tugas1_bmi.py
 ├── tugas2_nilai_mahasiswa.py
 ├── math_operations.py
-└── main.py
+├── main.py
+└── docs/
+    └── screenshot.png
 ```
 
 ---
