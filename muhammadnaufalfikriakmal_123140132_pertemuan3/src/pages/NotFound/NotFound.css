@@ -1,0 +1,21 @@
+.notfound {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.notfound-code {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  line-height: 1;
+}
+
+.notfound h1 {
+  margin: 0.5rem 0;
+  font-size: 1.6rem;
+}
+
+.notfound p {
+  margin-bottom: 1.25rem;
+  color: #64748b;
+}
