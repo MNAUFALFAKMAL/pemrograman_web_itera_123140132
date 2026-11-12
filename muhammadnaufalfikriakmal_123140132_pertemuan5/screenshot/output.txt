@@ -1,0 +1,77 @@
+============================================================
+    SISTEM MANAJEMEN PERPUSTAKAAN SEDERHANA
+============================================================
+
+[1] Menambahkan item ke perpustakaan...
+[SUKSES] Item 'Pemrograman Python Dasar' berhasil ditambahkan ke Perpustakaan Informatika ITERA.
+[SUKSES] Item 'Dasar-Dasar Basis Data' berhasil ditambahkan ke Perpustakaan Informatika ITERA.
+[SUKSES] Item 'Tech Monthly Edition' berhasil ditambahkan ke Perpustakaan Informatika ITERA.
+[SUKSES] Item 'Science Weekly' berhasil ditambahkan ke Perpustakaan Informatika ITERA.
+[PERINGATAN] Item dengan ID B001 sudah ada di koleksi!
+
+[2] Menampilkan katalog item...
+
+=== KATALOG Perpustakaan Informatika ITERA ===
+Total item: 4
+------------------------------------------------------------
+1. Buku | ID: B001 | Judul: Pemrograman Python Dasar | Tahun: 2023 | Penulis: John Doe | Halaman: 350 | Dipinjam: False
+2. Buku | ID: B002 | Judul: Dasar-Dasar Basis Data | Tahun: 2022 | Penulis: Jane Smith | Halaman: 420 | Dipinjam: False
+3. Majalah | ID: M001 | Judul: Tech Monthly Edition | Tahun: 2024 | Issue: 15 | Dipinjam: False
+4. Majalah | ID: M002 | Judul: Science Weekly | Tahun: 2024 | Issue: 8 | Dipinjam: False
+------------------------------------------------------------
+
+[3] Mencari item berdasarkan judul 'Python'...
+Ditemukan: Buku | ID: B001 | Judul: Pemrograman Python Dasar | Tahun: 2023 | Penulis: John Doe | Halaman: 350
+Status dipinjam: False
+
+[4] Mencari item berdasarkan ID 'M002'...
+Ditemukan: Majalah | ID: M002 | Judul: Science Weekly | Tahun: 2024 | Issue: 8
+
+[5] Mendaftarkan anggota...
+Anggota | ID: A001 | Nama: Ahmad Fadhil | Kontak: 081234567890 | Item dipinjam: 0
+Anggota | ID: A002 | Nama: Nabila Putri | Kontak: 089876543210 | Item dipinjam: 0
+
+[6] Proses peminjaman item...
+[PINJAM] 'Pemrograman Python Dasar' berhasil dipinjam oleh Ahmad Fadhil.
+[GAGAL] Item 'Pemrograman Python Dasar' sedang dipinjam orang lain.
+[PINJAM] 'Science Weekly' berhasil dipinjam oleh Nabila Putri.
+
+Status anggota setelah peminjaman:
+ -> Anggota | ID: A001 | Nama: Ahmad Fadhil | Kontak: 081234567890 | Item dipinjam: 1
+ -> Anggota | ID: A002 | Nama: Nabila Putri | Kontak: 089876543210 | Item dipinjam: 1
+
+=== KATALOG Perpustakaan Informatika ITERA ===
+Total item: 4
+------------------------------------------------------------
+1. Buku | ID: B001 | Judul: Pemrograman Python Dasar | Tahun: 2023 | Penulis: John Doe | Halaman: 350 | Dipinjam: True
+2. Buku | ID: B002 | Judul: Dasar-Dasar Basis Data | Tahun: 2022 | Penulis: Jane Smith | Halaman: 420 | Dipinjam: False
+3. Majalah | ID: M001 | Judul: Tech Monthly Edition | Tahun: 2024 | Issue: 15 | Dipinjam: False
+4. Majalah | ID: M002 | Judul: Science Weekly | Tahun: 2024 | Issue: 8 | Dipinjam: True
+------------------------------------------------------------
+
+[7] Proses pengembalian item...
+[KEMBALI] 'Pemrograman Python Dasar' telah dikembalikan oleh Ahmad Fadhil.
+ -> Anggota | ID: A001 | Nama: Ahmad Fadhil | Kontak: 081234567890 | Item dipinjam: 0
+
+[8] Menghitung denda peminjaman terlambat...
+Denda untuk B001 (5 hari terlambat): Rp 10000.00
+Denda untuk M002 (3 hari terlambat): Rp 1500.00
+
+[9] Demonstrasi encapsulation property setter (kontak anggota)...
+Kontak lama Ahmad Fadhil: 081234567890
+Kontak baru Ahmad Fadhil: 081200001111
+
+[10] Demonstrasi Polymorphism (method get_detail dan hitung_denda)...
+Mengiterasi seluruh koleksi dan memanggil method yang sama...
+  -> Buku | ID: B001 | Judul: Pemrograman Python Dasar | Tahun: 2023 | Penulis: John Doe | Halaman: 350
+     Denda 5 hari: Rp 10000.00
+  -> Buku | ID: B002 | Judul: Dasar-Dasar Basis Data | Tahun: 2022 | Penulis: Jane Smith | Halaman: 420
+     Denda 5 hari: Rp 10000.00
+  -> Majalah | ID: M001 | Judul: Tech Monthly Edition | Tahun: 2024 | Issue: 15
+     Denda 5 hari: Rp 2500.00
+  -> Majalah | ID: M002 | Judul: Science Weekly | Tahun: 2024 | Issue: 8
+     Denda 5 hari: Rp 2500.00
+
+============================================================
+    SELESAI MENGERJAKAN TUGAS PERTEMUAN 05
+============================================================
