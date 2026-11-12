@@ -59,6 +59,8 @@ muhammadnaufalfikriakmal_123140132_pertemuan4/
 
 ## 4. Screenshot Hasil Eksekusi
 
+![Screenshot hasil eksekusi](docs/screenshot.png)
+
 Lihat output program pada terminal (contoh di bawah).
 
 Hasil `tugas2_nilai_mahasiswa.py`:
