@@ -1,0 +1,117 @@
+.stats-page {
+  padding-top: 2rem;
+}
+
+.stats-header {
+  margin-bottom: 1.5rem;
+}
+
+.stats-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.stats-header p {
+  color: #64748b;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats-card {
+  padding: 1rem 1.1rem;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.stats-card span {
+  display: block;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.stats-card strong {
+  font-size: 1.8rem;
+  color: #0284c7;
+}
+
+.stats-section {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.stats-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+.stats-row-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.stats-row-value {
+  color: #64748b;
+}
+
+.progress-track {
+  height: 10px;
+  background-color: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.fill-milik {
+  background-color: #10b981;
+}
+
+.fill-baca {
+  background-color: #f59e0b;
+}
+
+.fill-beli {
+  background-color: #8b5cf6;
+}
+
+.stats-note,
+.stats-empty {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.stats-note code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background-color: #f1f5f9;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
