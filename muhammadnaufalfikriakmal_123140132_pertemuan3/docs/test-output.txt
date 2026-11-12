@@ -1,0 +1,23 @@
+﻿
+ RUN  v5.1.0 C:/KULIAH/praktikum_paw_p3/muhammadnaufalfikriakmal_123140132_pertemuan3
+
+ ✓ src/hooks/useBookStats.test.jsx > Custom hook useBookStats > menghitung jumlah buku per status dan jumlah penulis 23ms
+ ✓ src/hooks/useBookStats.test.jsx > Custom hook useBookStats > mengembalikan nol jika belum ada buku 3ms
+ ✓ src/hooks/useLocalStorage.test.jsx > Custom hook useLocalStorage > menyimpan nilai terbaru ke localStorage 26ms
+ ✓ src/hooks/useLocalStorage.test.jsx > Custom hook useLocalStorage > membaca nilai awal dari localStorage 4ms
+ ✓ src/components/BookList/BookList.test.jsx > Komponen BookList > menampilkan judul, penulis, dan status buku 38ms
+ ✓ src/components/BookFilter/BookFilter.test.jsx > Komponen BookFilter > memanggil onFilterChange saat tombol status diklik 203ms
+ ✓ src/components/BookFilter/BookFilter.test.jsx > Komponen BookFilter > memanggil onSearchChange saat pengguna mengetik 10ms
+ ✓ src/components/BookList/BookList.test.jsx > Komponen BookList > memanggil onEdit dan onDelete dengan data yang benar 182ms
+ ✓ src/components/BookList/BookList.test.jsx > Komponen BookList > menampilkan pesan kosong jika daftar buku kosong 5ms
+ ✓ src/components/BookForm/BookForm.test.jsx > Komponen BookForm > menampilkan pesan error jika judul dan penulis kosong 202ms
+ ✓ src/components/BookForm/BookForm.test.jsx > Komponen BookForm > mengirim data buku baru saat semua kolom terisi 47ms
+ ✓ src/components/BookForm/BookForm.test.jsx > Komponen BookForm > mengisi form otomatis saat mode edit 32ms
+ ✓ src/pages/Home/Home.test.jsx > Halaman Home > menambahkan buku baru lewat form dan menampilkannya di daftar 222ms
+ ✓ src/pages/Home/Home.test.jsx > Halaman Home > menyaring buku berdasarkan kata kunci pencarian 16ms
+
+ Test Files  6 passed (6)
+      Tests  14 passed (14)
+   Start at  20:30:32
+   Duration  3.10s (environment 75%, setup 11%, tests 7%, import 5%, worker 2%, transform 1%)
+
