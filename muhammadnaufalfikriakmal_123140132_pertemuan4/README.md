@@ -65,18 +65,18 @@ Hasil `tugas2_nilai_mahasiswa.py`:
 
 ```
 --- DATA NILAI MAHASISWA ---
-Nama            NIM         Nilai Akhir   Grade
-------------------------------------------------
-Ahmad Fadhilah  123140101   85.00         A
-Budi Santoso    123140102   75.00         B
-Siti Aminah     123140103   91.40         A
-Dewi Lestari    123140104   65.00         C
-Andi Pratama    123140105   55.00         D
+Nama                NIM         Nilai Akhir   Grade
+----------------------------------------------------
+Naufal Fikri        123140132   85.00         A
+Aji Nur             123140189   75.00         B
+Danang              123140005   91.40         A
+Rian                123140190   65.00         C
+Nabila Mujahidin    123140062   55.00         D
 
 Mahasiswa nilai tertinggi:
-  Siti Aminah (123140103) - 91.40 (Grade A)
+  Danang (123140005) - 91.40 (Grade A)
 Mahasiswa nilai terendah:
-  Andi Pratama (123140105) - 55.00 (Grade D)
+  Nabila Mujahidin (123140062) - 55.00 (Grade D)
 ```
 
 Hasil `main.py`:

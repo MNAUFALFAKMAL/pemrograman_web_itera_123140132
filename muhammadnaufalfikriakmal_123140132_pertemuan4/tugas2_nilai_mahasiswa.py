@@ -5,11 +5,11 @@
 
 # 1. Data mahasiswa (list of dictionary)
 data_mahasiswa = [
-    {"nama": "Ahmad Fadhilah", "nim": "123140101", "nilai_uts": 80, "nilai_uas": 85, "nilai_tugas": 90},
-    {"nama": "Budi Santoso", "nim": "123140102", "nilai_uts": 70, "nilai_uas": 75, "nilai_tugas": 80},
-    {"nama": "Siti Aminah", "nim": "123140103", "nilai_uts": 90, "nilai_uas": 95, "nilai_tugas": 88},
-    {"nama": "Dewi Lestari", "nim": "123140104", "nilai_uts": 60, "nilai_uas": 65, "nilai_tugas": 70},
-    {"nama": "Andi Pratama", "nim": "123140105", "nilai_uts": 50, "nilai_uas": 55, "nilai_tugas": 60},
+    {"nama": "Naufal Fikri", "nim": "123140132", "nilai_uts": 80, "nilai_uas": 85, "nilai_tugas": 90},
+    {"nama": "Aji Nur", "nim": "123140189", "nilai_uts": 70, "nilai_uas": 75, "nilai_tugas": 80},
+    {"nama": "Danang", "nim": "123140005", "nilai_uts": 90, "nilai_uas": 95, "nilai_tugas": 88},
+    {"nama": "Rian", "nim": "123140190", "nilai_uts": 60, "nilai_uas": 65, "nilai_tugas": 70},
+    {"nama": "Nabila Mujahidin", "nim": "123140062", "nilai_uts": 50, "nilai_uas": 55, "nilai_tugas": 60},
 ]
 
 # 2. Hitung nilai akhir dan grade setiap mahasiswa
@@ -30,10 +30,10 @@ for mhs in data_mahasiswa:
 
 # 3. Tampilkan tabel
 print("--- DATA NILAI MAHASISWA ---")
-print(f"{'Nama':<16}{'NIM':<12}{'Nilai Akhir':<14}{'Grade':<6}")
-print("-" * 48)
+print(f"{'Nama':<20}{'NIM':<12}{'Nilai Akhir':<14}{'Grade':<6}")
+print("-" * 52)
 for mhs in data_mahasiswa:
-    print(f"{mhs['nama']:<16}{mhs['nim']:<12}{mhs['nilai_akhir']:<14.2f}{mhs['grade']:<6}")
+    print(f"{mhs['nama']:<20}{mhs['nim']:<12}{mhs['nilai_akhir']:<14.2f}{mhs['grade']:<6}")
 
 # 4. Cari nilai tertinggi dan terendah
 tertinggi = max(data_mahasiswa, key=lambda m: m["nilai_akhir"])
