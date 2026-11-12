@@ -1,0 +1,83 @@
+.home-header {
+  padding: 2.25rem 0 2rem;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+}
+
+.home-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.home-header h1 {
+  margin: 0.35rem 0 0.5rem;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  color: #fff;
+}
+
+.home-subtitle {
+  max-width: 56ch;
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  padding: 0.75rem 0.9rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+.stat-card strong {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.home-content {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+  align-items: start;
+}
+
+.home-sidebar {
+  position: sticky;
+  top: 1rem;
+}
+
+.result-info {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+@media (max-width: 860px) {
+  .home-content {
+    grid-template-columns: 1fr;
+  }
+
+  .home-sidebar {
+    position: static;
+  }
+
+  .home-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
