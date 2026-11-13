@@ -2,8 +2,7 @@
 
 **Nama:** Muhammad Naufal Fikri Akmal  
 **NIM:** 123140132  
-**Kelas:** RA  
-**Mata Kuliah:** Praktikum Pengembangan Aplikasi Web - ITERA
+**Kelas:** RA
 
 ---
 
