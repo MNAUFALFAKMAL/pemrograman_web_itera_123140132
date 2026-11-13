@@ -2,10 +2,11 @@
 __pycache__/
 *.pyc
 *.pyo
+
+# Virtual environment
 venv/
-env/
 .venv/
-venv/
+env/
 _env/
 Env/
 env.bak/
