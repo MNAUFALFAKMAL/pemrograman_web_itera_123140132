@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}RESTful API Mahasiswa{% endblock %}</title>
+    <link rel="stylesheet"
+          href="{{ request.static_url('pyramid_mahasiswa:static/style.css') }}">
+  </head>
+  <body>
+    <header>
+      <h1>RESTful API Mahasiswa &amp; Mata Kuliah</h1>
+      <p>Pyramid + SQLAlchemy + PostgreSQL - Praktikum Pemrograman Web</p>
+    </header>
+    <main>
+      {% block content %}
+        <p>No content</p>
+      {% endblock content %}
+    </main>
+    <footer>Copyright &copy; Pylons Project</footer>
+  </body>
+</html>

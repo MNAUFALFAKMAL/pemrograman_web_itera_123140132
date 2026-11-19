@@ -1,0 +1,29 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<section>
+  <h2>Endpoint yang tersedia</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Path</th>
+        <th>Keterangan</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for endpoint in endpoints %}
+      <tr>
+        <td>
+          <span class="method method-{{ endpoint.method|lower }}">
+            {{ endpoint.method }}
+          </span>
+        </td>
+        <td><code>{{ endpoint.path }}</code></td>
+        <td>{{ endpoint.description }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock content %}
