@@ -1,0 +1,235 @@
+
+### SCREENSHOT: 01_mahasiswa_crud
+
+PS> curl -X GET http://localhost:6543/api/mahasiswa
+{
+  "mahasiswas": [
+    {
+      "id": 1,
+      "nim": "12345",
+      "nama": "Budi Santoso",
+      "jurusan": "Teknik Informatika",
+      "tanggal_lahir": "2000-05-15",
+      "alamat": "Jl. Merdeka No. 123, Bandung"
+    },
+    {
+      "id": 2,
+      "nim": "54321",
+      "nama": "Siti Aminah",
+      "jurusan": "Sistem Informasi",
+      "tanggal_lahir": "2001-08-22",
+      "alamat": "Jl. Mawar No. 45, Jakarta"
+    }
+  ]
+}
+HTTP 200
+
+PS> curl -X GET http://localhost:6543/api/mahasiswa/1
+{
+  "mahasiswa": {
+    "id": 1,
+    "nim": "12345",
+    "nama": "Budi Santoso",
+    "jurusan": "Teknik Informatika",
+    "tanggal_lahir": "2000-05-15",
+    "alamat": "Jl. Merdeka No. 123, Bandung"
+  }
+}
+HTTP 200
+
+PS> curl -X POST http://localhost:6543/api/mahasiswa -H "Content-Type: application/json" -d '{"nim":"67890","nama":"Ahmad Fadli","jurusan":"Teknik Elektro","tanggal_lahir":"2001-11-05","alamat":"Jl. Mawar No. 10, Surabaya"}'
+{
+  "success": true,
+  "mahasiswa": {
+    "id": 3,
+    "nim": "67890",
+    "nama": "Ahmad Fadli",
+    "jurusan": "Teknik Elektro",
+    "tanggal_lahir": "2001-11-05",
+    "alamat": "Jl. Mawar No. 10, Surabaya"
+  }
+}
+HTTP 200
+
+PS> curl -X PUT http://localhost:6543/api/mahasiswa/1 -H "Content-Type: application/json" -d '{"jurusan":"Informatika Medis","alamat":"Jl. Dipati Ukur No. 88, Bandung"}'
+{
+  "success": true,
+  "mahasiswa": {
+    "id": 1,
+    "nim": "12345",
+    "nama": "Budi Santoso",
+    "jurusan": "Informatika Medis",
+    "tanggal_lahir": "2000-05-15",
+    "alamat": "Jl. Dipati Ukur No. 88, Bandung"
+  }
+}
+HTTP 200
+
+PS> curl -X DELETE http://localhost:6543/api/mahasiswa/3
+{
+  "success": true,
+  "message": "Mahasiswa dengan ID 3 berhasil dihapus"
+}
+HTTP 200
+
+PS> curl -X GET http://localhost:6543/api/mahasiswa/3
+{
+  "error": "Mahasiswa dengan ID 3 tidak ditemukan"
+}
+HTTP 404
+
+
+### SCREENSHOT: 02_mahasiswa_validation
+
+PS> curl -X POST http://localhost:6543/api/mahasiswa -H "Content-Type: application/json" -d '{"nama":"Mahasiswa Tanpa NIM","jurusan":"Informatika"}'
+{
+  "error": "Field nim wajib diisi!"
+}
+HTTP 400
+
+PS> curl -X POST http://localhost:6543/api/mahasiswa -H "Content-Type: application/json" -d '{"nim":"99999","nama":"Tanggal Salah","jurusan":"Informatika","tanggal_lahir":"05-11-2001"}'
+{
+  "error": "Format tanggal lahir tidak valid. Gunakan format YYYY-MM-DD"
+}
+HTTP 400
+
+
+### SCREENSHOT: 03_matakuliah_crud
+
+PS> curl -X GET http://localhost:6543/api/matakuliah
+{
+  "matakuliahs": [
+    {
+      "id": 1,
+      "kode_mk": "IF2110",
+      "nama_mk": "Pemrograman Web",
+      "sks": 3,
+      "semester": 3
+    },
+    {
+      "id": 2,
+      "kode_mk": "IF3140",
+      "nama_mk": "Basis Data",
+      "sks": 4,
+      "semester": 5
+    },
+    {
+      "id": 3,
+      "kode_mk": "IF3210",
+      "nama_mk": "Rekayasa Perangkat Lunak",
+      "sks": 3,
+      "semester": 5
+    }
+  ]
+}
+HTTP 200
+
+PS> curl -X GET http://localhost:6543/api/matakuliah/1
+{
+  "matakuliah": {
+    "id": 1,
+    "kode_mk": "IF2110",
+    "nama_mk": "Pemrograman Web",
+    "sks": 3,
+    "semester": 3
+  }
+}
+HTTP 200
+
+PS> curl -X POST http://localhost:6543/api/matakuliah -H "Content-Type: application/json" -d '{"kode_mk":"IF4050","nama_mk":"Kecerdasan Buatan","sks":3,"semester":7}'
+{
+  "success": true,
+  "matakuliah": {
+    "id": 4,
+    "kode_mk": "IF4050",
+    "nama_mk": "Kecerdasan Buatan",
+    "sks": 3,
+    "semester": 7
+  }
+}
+HTTP 200
+
+PS> curl -X PUT http://localhost:6543/api/matakuliah/1 -H "Content-Type: application/json" -d '{"sks":4,"semester":4}'
+{
+  "success": true,
+  "matakuliah": {
+    "id": 1,
+    "kode_mk": "IF2110",
+    "nama_mk": "Pemrograman Web",
+    "sks": 4,
+    "semester": 4
+  }
+}
+HTTP 200
+
+PS> curl -X DELETE http://localhost:6543/api/matakuliah/4
+{
+  "success": true,
+  "message": "Matakuliah dengan ID 4 berhasil dihapus"
+}
+HTTP 200
+
+PS> curl -X GET http://localhost:6543/api/matakuliah/4
+{
+  "error": "Matakuliah dengan ID 4 tidak ditemukan"
+}
+HTTP 404
+
+
+### SCREENSHOT: 04_matakuliah_validation
+
+PS> curl -X POST http://localhost:6543/api/matakuliah -H "Content-Type: application/json" -d '{"nama_mk":"Tanpa Kode","sks":3,"semester":3}'
+{
+  "error": "Field kode_mk wajib diisi!"
+}
+HTTP 400
+
+PS> curl -X POST http://localhost:6543/api/matakuliah -H "Content-Type: application/json" -d '{"kode_mk":"IF9999","nama_mk":"SKS Nol","sks":0,"semester":3}'
+{
+  "error": "Field sks harus lebih besar dari 0!"
+}
+HTTP 400
+
+PS> curl -X POST http://localhost:6543/api/matakuliah -H "Content-Type: application/json" -d '{"kode_mk":"IF9999","nama_mk":"Semester Minus","sks":3,"semester":-2}'
+{
+  "error": "Field semester harus lebih besar dari 0!"
+}
+HTTP 400
+
+PS> curl -X POST http://localhost:6543/api/matakuliah -H "Content-Type: application/json" -d '{"kode_mk":"IF2110","nama_mk":"Pemrograman Web","sks":3,"semester":3}'
+{
+  "error": "Kode mata kuliah IF2110 sudah terdaftar"
+}
+HTTP 400
+
+
+### SCREENSHOT: 05_database_postgresql
+
+PS> alembic -c development.ini current
+dff85ba70421 (head)
+
+PS> alembic -c development.ini history
+c3f47474da94 -> dff85ba70421 (head), create matakuliah table
+<base> -> c3f47474da94, create mahasiswa table
+
+PS> psql -h localhost -U pyramid_user -d pyramid_mahasiswa -c "SELECT id, nim, nama, jurusan FROM mahasiswa ORDER BY id;"
+ id |  nim  |     nama     |      jurusan      
+----+-------+--------------+-------------------
+  1 | 12345 | Budi Santoso | Informatika Medis
+  2 | 54321 | Siti Aminah  | Sistem Informasi
+(2 rows)
+
+PS> psql -h localhost -U pyramid_user -d pyramid_mahasiswa -c "SELECT id, kode_mk, nama_mk, sks, semester FROM matakuliah ORDER BY id;"
+ id | kode_mk |         nama_mk          | sks | semester 
+----+---------+--------------------------+-----+----------
+  1 | IF2110  | Pemrograman Web          |   4 |        4
+  2 | IF3140  | Basis Data               |   4 |        5
+  3 | IF3210  | Rekayasa Perangkat Lunak |   3 |        5
+(3 rows)
+
+### SCREENSHOT: 06_unit_test
+
+PS> pytest -q
+........                                                                 [100%]
+8 passed in 1.14s
+

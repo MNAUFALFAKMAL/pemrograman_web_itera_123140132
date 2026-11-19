@@ -1,0 +1,112 @@
+### Variabel untuk VS Code REST Client
+@host = http://localhost:6543
+
+### ======================= MAHASISWA =======================
+
+### READ ALL - seluruh mahasiswa
+GET {{host}}/api/mahasiswa
+
+### READ ONE - detail mahasiswa ID 1
+GET {{host}}/api/mahasiswa/1
+
+### CREATE - tambah mahasiswa baru
+POST {{host}}/api/mahasiswa
+Content-Type: application/json
+
+{
+  "nim": "67890",
+  "nama": "Ahmad Fadli",
+  "jurusan": "Teknik Elektro",
+  "tanggal_lahir": "2001-11-05",
+  "alamat": "Jl. Mawar No. 10, Surabaya"
+}
+
+### UPDATE - ubah jurusan dan alamat mahasiswa ID 1
+PUT {{host}}/api/mahasiswa/1
+Content-Type: application/json
+
+{
+  "jurusan": "Informatika Medis",
+  "alamat": "Jl. Dipati Ukur No. 88, Bandung"
+}
+
+### DELETE - hapus mahasiswa ID 3
+DELETE {{host}}/api/mahasiswa/3
+
+### VALIDATION - field nim tidak dikirim (400)
+POST {{host}}/api/mahasiswa
+Content-Type: application/json
+
+{
+  "nama": "Mahasiswa Tanpa NIM",
+  "jurusan": "Informatika"
+}
+
+### NOT FOUND - ID tidak ada (404)
+GET {{host}}/api/mahasiswa/3
+
+### ======================= MATAKULIAH =======================
+
+### READ ALL - seluruh mata kuliah
+GET {{host}}/api/matakuliah
+
+### READ ONE - detail mata kuliah ID 1
+GET {{host}}/api/matakuliah/1
+
+### CREATE - tambah mata kuliah baru
+POST {{host}}/api/matakuliah
+Content-Type: application/json
+
+{
+  "kode_mk": "IF4050",
+  "nama_mk": "Kecerdasan Buatan",
+  "sks": 3,
+  "semester": 7
+}
+
+### UPDATE - ubah sks dan semester mata kuliah ID 1
+PUT {{host}}/api/matakuliah/1
+Content-Type: application/json
+
+{
+  "sks": 4,
+  "semester": 4
+}
+
+### DELETE - hapus mata kuliah ID 4
+DELETE {{host}}/api/matakuliah/4
+
+### VALIDATION - field kode_mk tidak dikirim (400)
+POST {{host}}/api/matakuliah
+Content-Type: application/json
+
+{
+  "nama_mk": "Tanpa Kode",
+  "sks": 3,
+  "semester": 3
+}
+
+### VALIDATION - sks bernilai nol (400)
+POST {{host}}/api/matakuliah
+Content-Type: application/json
+
+{
+  "kode_mk": "IF9999",
+  "nama_mk": "SKS Nol",
+  "sks": 0,
+  "semester": 3
+}
+
+### VALIDATION - kode_mk duplikat (400)
+POST {{host}}/api/matakuliah
+Content-Type: application/json
+
+{
+  "kode_mk": "IF2110",
+  "nama_mk": "Pemrograman Web",
+  "sks": 3,
+  "semester": 3
+}
+
+### NOT FOUND - ID tidak ada (404)
+GET {{host}}/api/matakuliah/4
